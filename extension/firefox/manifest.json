@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Semantic Pivot Search (Firefox)",
+  "version": "1.0",
+  "description": "Firefox version of the Semantic Pivot Logic search tool.",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["*://www.google.com/*"],
+  "background": {
+    "scripts": ["../background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search?*"],
+      "js": ["../content.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "semantic-pivot@148iq.architect"
+    }
+  }
+}
