@@ -1,0 +1,54 @@
+/**
+ * Semantic Pivot Logic (SPL) - Content Script
+ * Optimized for Infinite Scroll & android Performance
+ */
+
+const pivotCache = new Set(); // Prevents double-tagging the same element
+
+async function translateText(text) {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-CN&tl=en&dt=t&q=${encodeURIComponent(text)}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data?.[0]?.[0]?.[0] || null;
+    } catch (e) { return null; }
+}
+
+async function performPivot(elements) {
+    const tasks = Array.from(elements)
+        .filter(el => !pivotCache.has(el)) // Skip if already processed
+        .map(async (el) => {
+            pivotCache.add(el);
+            const text = el.innerText;
+            
+            if (/[\u4e00-\u9fa5]/.test(text)) {
+                const translation = await translateText(text);
+                if (translation) {
+                    const anchor = document.createElement('div');
+                    anchor.style.cssText = 'color: #00ff00; font-size: 0.85em; background: #1a1a1a; padding: 2px 5px; border-radius: 4px; margin-top: 5px; border-left: 2px solid #00ff00;';
+                    anchor.innerText = `[SPL Pivot: ${translation}]`;
+                    el.appendChild(anchor);
+                }
+            }
+        });
+    await Promise.all(tasks);
+}
+
+// Watch for new results being added to the DOM (Infinite Scroll)
+const observer = new MutationObserver((mutations) => {
+    const newElements = document.querySelectorAll('h3:not([data-spl]), .VwiC3b:not([data-spl])');
+    if (newElements.length > 0) {
+        performPivot(newElements);
+    }
+});
+
+// Start the engine
+function initSPL() {
+    // Initial run
+    performPivot(document.querySelectorAll('h3, .VwiC3b'));
+    
+    // Start observing the body for new search results
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
+window.addEventListener('load', initSPL);
