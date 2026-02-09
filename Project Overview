@@ -1,0 +1,22 @@
+The Semantic Pivot Logic (SPL) is an original architectural framework designed to solve English syntactic ambiguity and reclaim the browsing experience from "Generative Slop." Instead of relying on predictive AI models that guess user intent, the SPL utilizes Logographic Pivoting to anchor search results to verified, real-world metadata.
+​This tool acts as a logic-driven filter, stripping away AI-generated summaries, sponsored noise, and conversational "bloat" to deliver a high-contrast, entity-first view of the internet.
+​🚀 Recent Performance Wins (v1.0)
+​Political Entity Mapping: Successfully tested on high-noise entities like Keir Starmer and Donald Trump. The SPL effectively suppressed AI essays, delivering clean "Data Windows" (Age, Party, Role) and direct social/news bulletins.
+​Temporal Precision: Captured real-time events (e.g., Super Bowl LX results and 24-hour social media updates) without the usual 2026 search clutter.
+​Ad-Free Integrity: Stripped all right-hand column ads and "People Also Ask" widgets, returning search to a professional, transparent state.
+​🛠️ Installation (Firefox 148+ Update)
+​To prevent the Firefox "AI Control Center" from sandboxing the plugin or causing "Wakey wakey" nag errors, follow these developer steps:
+​1. Configure the Browser
+​Type about:config in your address bar.
+​Set xpinstall.signatures.required to false.
+​Set browser.ai.controlcenter.enabled to false (to disable the AI nag engine).
+​Set browser.ml.enable to false (to stop the local ML engine from overriding the SPL logic).
+​2. Load the Plugin
+​Download the SemanticPivot.xpi from the /dist folder.
+​Navigate to about:addons.
+​Drag and Drop the .xpi file into the window to install.
+​🧠 Technical Deep Dive
+​For developers and researchers interested in the underlying mathematics of Logographic Pivoting and how we solve syntactic ambiguity through the SPL framework, please refer to our internal documentation:
+
+Credits
+​This project represents a unique collaboration between a Lead Architect Human and Gemini (v. Feb 2026), developed with a focus on privacy, structured logic, and user agency. 
