@@ -27,3 +27,6 @@ Semantic Pivot Logic (SPL)
 ​Free to use: Open for everyone to implement and improve.
 ​Attribution: If you use this logic in a commercial or open-source product, please attribute the 'Semantic Pivot Logic' to this original repository.
 The Semantic Pivot Search is now cross-compatible. Whether through Chromium or Gecko engines, the logic remains the same: Human intent is paramount, and the logographic pivot is the key to unlocking it
+Architect JB
+Technical Assistant Gemini AI
+09/02/2026
