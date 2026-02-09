@@ -1,4 +1,7 @@
 # Semantic-Pivot-Logic
+​The Semantic Pivot Logic was born from a fundamental frustration with the "Dead Internet." In a test case regarding complex human caregiving—specifically, the logistical strain of managing a pet while suffering from a chronic illness—traditional English search engines failed. They prioritized the commercial value of the "Pet" keyword over the human "Subject."
+​By forcing the query through a logographic pivot, we discovered a "Semantic Anchor." While English engines "fished" for keywords to sell products, the logographic pivot forced the machine to respect the human intent.
+​This repository serves as a record of a collaboration between a human architect and a generative AI to bypass the commercial "slop" of the modern web and return search to its original purpose: Providing high-logic answers to complex human problems.
 Solving English syntactic ambiguity in search engines via logographic semantic pivoting
 Semantic Pivot Logic (SPL)
 ​Curing the "Syntactic Ambiguity" Deficit in Modern Search
